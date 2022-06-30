@@ -5,10 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iRock - The Virtual Pet Rock</title>
+    <script type="text/javascript">
+        function touchRock() {
+            var userName = prompt("What is your name?", "Enter your name here.");
+
+            if (userName) {
+                alert("It is good to meet you, " + userName + ".");
+                document.getElementById("rockImg").src="./images/rock_happy.png";
+            }
+        }
+    </script>
+    <style>
+        div {
+            margin-top:100px; 
+            text-align:center;
+        }
+        img {
+            cursor:pointer;
+        }
+    </style>
 </head>
 <body onload="alert('Hello, I am Rocky');">
-    <div style="margin-top:100px; text-align:center">
-        <img id="rockImg" src="./images/rock.png" alt="iRock">
+    <div>
+        <img id="rockImg" src="./images/rock.png" alt="iRock" onclick="touchRock();">
     </div>
 </body>
 </html>
