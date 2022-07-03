@@ -45,34 +45,41 @@
   </head>
   <body>
     <div id="frame">
-      <div class="heading">Johnson's Just-In-Time Donuts</div>
+      <div class="heading">Johnson's Donuts</div>
       <div class="subheading">All donuts #500 each!!!</div>
       <div id="left">
         <img src="./images/donuttime.png" alt="Just-In-Time Donuts" />
       </div>
       <form name="orderform" action="donuts.php" method="POST">
         <div class="field">
-          Name: <input type="text" id="name" name="name" value="" />
+        <label for="name">Name: </label>
+        <input type="text" id="name" name="name" value="" />
         </div>
         <div class="field">
-        Cake donuts: <input type="text" id="cakedonuts" name="cakedonuts" value=""
+        <label for="cakedonuts"> Cake donuts: </label>
+        <input type="text" id="cakedonuts" name="cakedonuts" value=""
+         onchange="updateOrder();" />
+        </div>
+        <div class="field">
+        <label for="glazeddonuts">Glazed donuts: </label>
+        <input type="text" id="glazeddonuts" name="glazeddonuts" value=""
           onchange="updateOrder();" />
         </div>
         <div class="field">
-        Glazed donuts: <input type="text" id="glazeddonuts" name="glazeddonuts" value=""
-          onchange="updateOrder();" />
+          <label for="pickupminutes">Minutes 'til pickup: </label>
+        <input type="text" id="pickupminutes" name="pickupminutes" value="" />
         </div>
         <div class="field">
-        Minutes 'til pickup: <input type="text" id="pickupminutes" name="pickupminutes" value="" />
+          <label for="subtotal">Subtotal: </label>
+        <input type="text" id="subtotal" name="subtotal" value="" readonly="readonly" />
         </div>
         <div class="field">
-        Subtotal: <input type="text" id="subtotal" name="subtotal" value="" readonly="readonly" />
+          <label for="tax">Tax: </label>
+          <input type="text" id="tax" name="tax" value="" readonly="readonly" />
         </div>
         <div class="field">
-        Tax: <input type="text" id="tax" name="tax" value="" readonly="readonly" />
-        </div>
-        <div class="field">
-        Total: <input type="text" id="total" name="total" value="" readonly="readonly" />
+          <label for="total">Total: </label>
+        <input type="text" id="total" name="total" value="" readonly="readonly" />
         </div>
         <div class="field">
         <input type="button" value="Place Order" onclick="placeOrder(this.form);" />
