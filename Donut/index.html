@@ -8,8 +8,8 @@
     <link rel="stylesheet" type="text/css" href="./donuts.css">
     <script type="text/Javascript">
        function updateOrder() {
-        const TAXRATE = 0.0925;
-        const DONUTPRICE = 0.50;
+        const TAXRATE = 0.009;
+        const DONUTPRICE = 500;
         var numCakeDonuts = parseDonuts(document.getElementById("cakedonuts").value);
         var numGlazedDonuts = parseDonuts(document.getElementById("glazeddonuts").value);
         if (isNaN(numCakeDonuts))
@@ -19,9 +19,9 @@
         var subTotal = (numCakeDonuts + numGlazedDonuts) * DONUTPRICE;
         var tax = subTotal * TAXRATE;
         var total = subTotal + tax;
-        document.getElementById("subtotal").value = "$" + subTotal.toFixed(2);
-        document.getElementById("tax").value = "$" + tax.toFixed(2);
-        document.getElementById("total").value = "$" + total.toFixed(2);
+        document.getElementById("subtotal").value = "#" + subTotal.toFixed(2);
+        document.getElementById("tax").value = "#" + tax.toFixed(2);
+        document.getElementById("total").value = "#" + total.toFixed(2);
       }
 
       function parseDonuts(donutString) {
@@ -33,10 +33,10 @@
 
       function placeOrder(form) {
         if (document.getElementById("name").value == "")
-          alert("I'm sorry but you must provide your name before submitting an order.");
+          alert("Please provide your name before submitting an order.");
         else if (document.getElementById("pickupminutes").value == "" ||
           isNaN(document.getElementById("pickupminutes").value))
-          alert("I'm sorry but you must provide the number of minutes until pick-up before submitting an order.");
+          alert("Please provide the number of minutes until pick-up before submitting an order.");
         else
           form.submit();
       }
@@ -45,8 +45,8 @@
   </head>
   <body>
     <div id="frame">
-      <div class="heading">Duncan's Just-In-Time Donuts</div>
-      <div class="subheading">All donuts 50 cents each, cake or glazed!</div>
+      <div class="heading">Johnson's Just-In-Time Donuts</div>
+      <div class="subheading">All donuts #500 each!!!</div>
       <div id="left">
         <img src="./images/donuttime.png" alt="Just-In-Time Donuts" />
       </div>
@@ -55,11 +55,11 @@
           Name: <input type="text" id="name" name="name" value="" />
         </div>
         <div class="field">
-        # of cake donuts: <input type="text" id="cakedonuts" name="cakedonuts" value=""
+        Cake donuts: <input type="text" id="cakedonuts" name="cakedonuts" value=""
           onchange="updateOrder();" />
         </div>
         <div class="field">
-        # of glazed donuts: <input type="text" id="glazeddonuts" name="glazeddonuts" value=""
+        Glazed donuts: <input type="text" id="glazeddonuts" name="glazeddonuts" value=""
           onchange="updateOrder();" />
         </div>
         <div class="field">

@@ -5,6 +5,8 @@ body {
   }
   
   #frame {
+    display: inline-block;
+    justify-content: center;
     margin-top:15px;
     width:440px;
   }
