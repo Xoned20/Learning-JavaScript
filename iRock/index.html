@@ -16,7 +16,7 @@
         }
     </style>
 </head>
-<body onload="greetUser();">
+<body onload="resizeRock; greetUser();">
     <div>
         <img id="rockImg" src="./images/rock.png" alt="iRock" onclick="touchRock();">
     </div>
@@ -38,6 +38,11 @@
         }
         document.getElementById("rockImg").src = "./images/rock_happy.png";
         setTimeout("document.getElementById('rockImg').src = './images/rock.png';", 1 * 60 * 1000);
+      }
+
+      function resizeRock() {
+        document.getElementById('rockImg').style.height = 
+        (document.body.clientHeight - 100) * 0.9;
       }
         
     </script>
